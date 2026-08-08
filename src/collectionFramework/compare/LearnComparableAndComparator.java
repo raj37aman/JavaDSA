@@ -1,4 +1,4 @@
-package collectionframework.compare;
+package collectionFramework.compare;
 
 import java.util.*;
 
@@ -73,11 +73,11 @@ public class LearnComparableAndComparator {
 
 
         // Sorting 2D array on the basis of 1st element
-        int arr[][] = {{4, 5, 2}, {3, 1, 2}, {1, 4, 2}};
+        int[][] arr = {{4, 5, 2}, {3, 1, 2}, {1, 4, 2}};
 
         Arrays.sort(arr, (arr1, arr2) -> arr1[0] - arr2[0]);
 
-        for (int ar[] : arr) {
+        for (int[] ar : arr) {
             for (int a : ar) {
                 System.out.print(a + " ");
             }
