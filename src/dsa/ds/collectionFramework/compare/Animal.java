@@ -1,4 +1,4 @@
-package collectionFramework.compare;
+package dsa.ds.collectionFramework.compare;
 
 public class Animal implements Comparable<Animal> {// Interface which let you use it's method compareTo() to implement comparison logic
 

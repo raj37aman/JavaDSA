@@ -1,4 +1,4 @@
-package collectionFramework.compare;
+package dsa.ds.collectionFramework.compare;
 
 import java.util.*;
 
