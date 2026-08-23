@@ -4,7 +4,7 @@ public class LearnException {
 
     public static void main(String[] args) {
 
-        System.out.println("Learn Exception !!!");
+        System.out.println("!!! Learn Exception !!!");
 
         int[] a = new int[5];
 

@@ -2,26 +2,11 @@ package dsa.ds.collectionFramework.compare;
 
 import java.util.*;
 
-class CustomComparator implements Comparator<Animal> {
-    /*
-    * Functional Interface which let you use it's method compare() to implement comparison logic
-    * As it is Functional Interface(which means it has ONLY one method) - so you can implement it through lambda expression instead of making a class to implement it's ONLY method compare()
-    */
-
-    @Override
-    public int compare(Animal o1, Animal o2) {
-        /*
-         * return +ve means current obj(this) > specified obj(parameter)
-         * return -ve means current obj < specified obj
-         * return 0 means current obj = specified obj
-         */
-        return o1.weight - o2.weight;
-    }
-}
-
 public class LearnComparableAndComparator {
 
     public static void main(String[] args) {
+
+        System.out.println("!!! Learn BigONotation !!!");
 
         Animal a3 = new Animal(3, "Box", 4);
         Animal a2 = new Animal(1, "Den", 6);
@@ -36,11 +21,14 @@ public class LearnComparableAndComparator {
 
         System.out.println("dogs: " + dogs);
 
+        /* Comparable */
         // using Comparable in class to sort
         Collections.sort(dogs);
 
         System.out.println("dogs: " + dogs);
 
+
+        /* Comparator */
         // using Custom Comparator Class and the Animal class remains unchanged
         Collections.sort(dogs, new CustomComparator());
 
@@ -84,5 +72,22 @@ public class LearnComparableAndComparator {
             System.out.println();
         }
 
+    }
+}
+
+class CustomComparator implements Comparator<Animal> {
+    /*
+     * Functional Interface which let you use it's method compare() to implement comparison logic
+     * As it is Functional Interface(which means it has ONLY one method) - so you can implement it through lambda expression instead of making a class to implement it's ONLY method compare()
+     */
+
+    @Override
+    public int compare(Animal o1, Animal o2) {
+        /*
+         * return +ve means current obj(this) > specified obj(parameter)
+         * return -ve means current obj < specified obj
+         * return 0 means current obj = specified obj
+         */
+        return o1.weight - o2.weight;
     }
 }

@@ -7,7 +7,7 @@ public class CustomException {
     public static void main(String[] args) {
 
         System.out.println("Learn throw");
-
+        System.out.println("!!! Learn throw & Custom Exception !!!");
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your age: ");

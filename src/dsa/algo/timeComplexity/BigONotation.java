@@ -4,6 +4,8 @@ public class BigONotation {
 
     public static void main(String[] args) {
 
+        System.out.println("!!! Learn BigONotation !!!");
+
         int[] arr = {5, 3, 7, 2, 6, 1, 7, 4, 6};
         int key = 10;
 
