@@ -10,22 +10,22 @@ public class LearnArrayList {
         System.out.println("!!! Learn List !!!");
 
         /*
-        Internal Working of ArrayList:
+        * Internal Working of ArrayList:
             - It creates resizable array.
             - Unlike Array(fixed size while declaration), ArrayList automatically changes its capacity as we add/remove element.
-            - resizing logic: 
+            - resizing logic:
         */
 
         List<Integer> list = new ArrayList<>();// List is the interface but to define an object we need a class which here is ArrayList
 
         // method of Collection interface to add element
-        list.add(1);// adds element in the last
+        list.add(1);// adds element at the last
         list.add(2);
         list.add(3);
         list.add(4);
         list.add(5);
-        list.addFirst(6);
-        list.addLast(6);
+        list.addFirst(6);// SequencedCollection method to add element at first
+        list.addLast(6);// SequencedCollection method to add element at last
         System.out.println("list: " + list);
         System.out.println("list.size(): " + list.size());// return size of list
 
