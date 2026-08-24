@@ -11,6 +11,10 @@ public class LearnStack {
 
         /*
         * Stack operates as LIFO
+            push() - last
+            peek() / pop() - last
+            - [][][][][][][] - push() / peek() / pop()
+        * Stack implements Vector (so it is recommended to use ArrayDeque to perform stack operations instead of Stack)
         */
 
         // Reference type: List
@@ -21,23 +25,24 @@ public class LearnStack {
 
         Stack<Integer> stack = new Stack<>();
         stack.push(1);// adds element at the last
+        stack.push(2);
 
-        stack.add(2);// (List method) add element at last
-        stack.add(1, 3);// (List method) add element at index specified
-        stack.addElement(6);// (Vector method) add element at last
-        stack.addFirst(4);// (SequencedCollection method) add element
-        stack.addLast(5);// (SequencedCollection method) add element
+        stack.add(3);// (List method) add element at last
+        stack.add(1, 4);// (List method) add element at index specified
+        stack.addElement(5);// (Vector method) add element at last
+        stack.addFirst(6);// (SequencedCollection method) add element
+        stack.addLast(7);// (SequencedCollection method) add element
 
 //        stack.addLast(7);
 //        stack.addLast(7);
 
         System.out.println("stack: " + stack);
 
-        stack.pop();// remove & return element from last // throw EmptyStackException is stack is empty
+        System.out.println("stack.peek(): " + stack.peek());// return element from last
+
+        System.out.println("stack.pop(): " + stack.pop());// remove & return element from last // throw EmptyStackException is stack is empty
         System.out.println("stack: " + stack);
 
-
-        System.out.println(stack.peek());// return element from last
 
         stack.empty();// return boolean whether stack is empty or not
         stack.isEmpty();// (List method) return boolean whether stack is empty or not
