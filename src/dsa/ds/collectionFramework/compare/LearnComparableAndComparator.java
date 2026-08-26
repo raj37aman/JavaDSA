@@ -6,7 +6,7 @@ public class LearnComparableAndComparator {
 
     public static void main(String[] args) {
 
-        System.out.println("!!! Learn BigONotation !!!");
+        System.out.println("!!! Learn Comparable & Comparator !!!");
 
         Animal a3 = new Animal(3, "Box", 4);
         Animal a2 = new Animal(1, "Den", 6);
@@ -21,21 +21,38 @@ public class LearnComparableAndComparator {
 
         System.out.println("dogs: " + dogs);
 
+
+        /*------------*/
         /* Comparable */
-        // using Comparable in class to sort
-        Collections.sort(dogs);
+        /*------------*/
 
-        System.out.println("dogs: " + dogs);
+        // using Comparable in a class to sort it.
+        // Animal implements Comparable<Animal> to use Collections.sort();
+//        Collections.sort(dogs);
+
+        System.out.println("dogs1: " + dogs);
 
 
+        /*------------*/
         /* Comparator */
-        // using Custom Comparator Class and the Animal class remains unchanged
+        /*------------*/
+
+        /* using Custom Comparator Class */
+        /*-------------------------------*/
+
+        // & the class you want to compare remains unchanged - means [Animal implements Comparable<Animal>] is not needed to use Collections.sort();
         Collections.sort(dogs, new CustomComparator());
 
-        System.out.println("dogs: " + dogs);
+        // OR can also be written as:
+        dogs.sort(new CustomComparator());
 
-        // using Comparator but with anonymous class
-        Collections.sort(dogs, new Comparator<Animal>() {
+        System.out.println("dogs2: " + dogs);
+
+
+        /* using Comparator but with anonymous class */
+        /*-------------------------------------------*/
+
+        dogs.sort(new Comparator<Animal>() {
             @Override
             public int compare(Animal o1, Animal o2) {
                 if (o1.weight == o2.weight) {
@@ -45,22 +62,35 @@ public class LearnComparableAndComparator {
             }
         });
 
-        System.out.println("dogs: " + dogs);
+        System.out.println("dogs3: " + dogs);
 
-        // using Comparator but with lambda expression
-        Collections.sort(dogs, (o1, o2) -> o1.age - o2.age);
-        // OR
-        Collections.sort(dogs, (o1, o2) -> {
+
+        /* using Comparator but with lambda expression */
+        /*---------------------------------------------*/
+
+        dogs.sort((o1, o2) -> o1.age - o2.age);// compare age
+
+        // OR can also be written as:
+        dogs.sort(Comparator.comparing(Animal::getAge));// compare age (this needed getters)
+
+        // OR (if multiple logic)
+        dogs.sort((o1, o2) -> {// compare first age & if age is same then by name
             if (o1.age == o2.age) {
                 return o1.name.compareTo(o2.name);
             }
             return o1.age - o2.age;
         });
 
-        System.out.println("dogs: " + dogs);
+        // OR can also be written as:
+        dogs.sort(Comparator.comparing(Animal::getAge).thenComparing(Animal::getName).thenComparing(Animal::getWeight));// compare age , then name & then weight (this needed getters)
+
+        System.out.println("dogs4: " + dogs);
 
 
-        // Sorting 2D array on the basis of 1st element
+
+        /* Sorting 2D array on the basis of 1st element */
+        /*----------------------------------------------*/
+
         int[][] arr = {{4, 5, 2}, {3, 1, 2}, {1, 4, 2}};
 
         Arrays.sort(arr, (arr1, arr2) -> arr1[0] - arr2[0]);
@@ -78,7 +108,8 @@ public class LearnComparableAndComparator {
 class CustomComparator implements Comparator<Animal> {
     /*
      * Functional Interface which let you use it's method compare() to implement comparison logic
-     * As it is Functional Interface(which means it has ONLY one method) - so you can implement it through lambda expression instead of making a class to implement it's ONLY method compare()
+     * As it is Functional Interface(which means it has ONLY one method)
+        so you can implement it through lambda expression instead of making a class to implement its ONLY method compare()
      */
 
     @Override
