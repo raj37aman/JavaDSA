@@ -10,8 +10,8 @@ public class LearnSet {
 
         /*
         * Set: Does not allow duplicates.
-        * HashSet: stores elements in random order [All operation is O(1) as it uses hashing].
-        * LinkedHashSet: stores elements in order in which you insert the elements [All operation is O(n)].
+        * HashSet: stores elements in random order [All operation is O(1) as it uses hash].
+        * LinkedHashSet: stores elements in order in which you insert the elements [Almost all operation is O(n), & constant for some].
         * TreeSet: stores elements sorted in natural ascending order [All operation is O(log n)].
         */
 
