@@ -13,10 +13,12 @@ public class BigONotation {
 
     }
 
+    // O(1)
     static int getFirstNumber(int[] arr) {
         return arr[0];
     }
 
+    // O(n)
     static boolean checkIfNumberIsPresent(int[] arr, int key) {
         for (int a: arr) {
             if (a == key) return true;
@@ -24,6 +26,7 @@ public class BigONotation {
         return false;
     }
 
+    // O(n^2)
     static void printAllPairsInArray(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
