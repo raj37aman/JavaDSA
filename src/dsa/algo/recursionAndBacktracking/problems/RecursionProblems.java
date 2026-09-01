@@ -1,4 +1,4 @@
-package dsa.algo.recursion.problems;
+package dsa.algo.recursionAndBacktracking.problems;
 
 public class RecursionProblems {
 
